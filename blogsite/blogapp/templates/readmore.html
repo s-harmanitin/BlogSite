@@ -1,0 +1,108 @@
+{% extends 'base.html'%}         
+       
+
+{% block card %}
+
+<style>
+  .bk{
+    transition: 1s;
+  }
+
+
+  .mb-3{
+    box-shadow: 1px 2px 4px black;
+    transition: 1s;
+  }
+  .mb-3:hover{
+    color: white;
+    font-weight: 700;
+    border-radius: 50px;
+
+  }
+  .mb-3 p{
+    color: black;
+    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  .card{
+    background: transparent;
+    color: black;
+    transition: 1s;
+  }
+  .card-img-top{
+    transition: 1s;
+  }
+  .card:hover  .card-img-top{
+   
+    border-radius: 50px;
+    
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<div class="container nb">
+  <div class="card mb-3">
+    <img class="card-img-top" src="{{readmore.image.url}}" alt="Card image cap" height="500px" width="400px">
+    <div class="card-body">
+      <h5 class="card-title">{{readmore.heading | title}}</h5>
+      <p class="card-text">{{readmore.desc | title}}</p>
+      <div class="row">
+        <div class="col-lg-6"><p class="card-text"><small class="text-muted">{{readmore.upload_on | title}} by -{{readmore.upload_by}}</small></p></div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3"> <small class="text-muted">{{readmore.datefield}}</small></div>
+      </div>
+      {% if user.is_authenticated %}
+      
+      <div class="card-body">
+        <a href="{% url 'update' readmore.id %}">
+            <button type="button" class="btn btn-outline-primary" >Update Data</button>
+        </a>
+        <a href="{% url 'delete' readmore.id %}">
+            <button type="button" class="btn btn-outline-primary">Delete</button>
+        </a>
+    </div>
+    {% endif %}
+    
+
+    
+      
+    </div>
+  </div>
+  
+  
+  
+  <div class="container bk">
+    
+      
+        <a href="{% url 'home' %}"><button type="button"  class="btn btn-danger btn-lg btn-block">Back</button></a>
+     
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
