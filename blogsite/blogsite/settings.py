@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 from django.conf.urls.static import static
 import django_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 
@@ -140,5 +143,13 @@ STATICFILES_DIRS=[BASE_DIR/'static',]
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+cloudinary.config( 
+  cloud_name = "nsshserver", 
+  api_key = "128949761485349", 
+  api_secret = "E7V-za5kukW-uo5YRWbhEaUNC3k",
+  secure = True
+)
+
 
 django_heroku.settings(locals())
