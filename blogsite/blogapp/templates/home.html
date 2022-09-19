@@ -7,8 +7,8 @@
 <style>
   @media screen and (min-width: 320px) and (max-width: 520px){
     .card{
-      height: auto;
-      width: auto;
+      margin: 0;
+      padding: 0;
     }
     
   }
@@ -16,90 +16,63 @@
     
     }
 
- 
-  .card-body{
-   
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: black;
-  }
-  .new_sec{
-    margin-top: 20px;
-  }
-  .card{
-    background: transparent;
-    border: 0.5px solid rgb(149, 147, 147);
+.header_col{
+  background-image: url("{% static 'grad_back.jpg' %}");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100px;
+  color: white;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.card{
+  padding: 0;
+  background-color: rgb(238, 238, 238);
+  border-radius: 5px;
+  margin-top: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgb(121, 121, 121);
+}
+.card h5{
+  color: black;
+}
+.cont{
+  display: table;
+  margin: auto;
+}
+.cont_one{
+  padding: 0;
+  margin: 0;
+}
+.img-top{
+  width: 100%;
+}
 
-    transition: 1s;
-  }
-  .card:hover{
-    transform: scale(0.9);
-  }
-  .owl-cont{
-    background-image: url("{% static 'grad_back.jpg' %}");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100px;
-    border-radius: 20px;
-    
-    
-  }
-  .owl-cont h1{
-    color: white;
-    text-align: center;
-    align-items: center;
-    background-position: center;
-    font-family: 'Tangerine',sans-serif;
-    font-weight: 700;
-    margin-top: 20px;
-    
-  }
-
-  
 </style>
 
-
-<div class="container-fluid owl-cont">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12 header_col">
       <h1>Blogs</h1>
     </div>
   </div>
 </div>
- 
 
 
-
-<div class="container-fluid ">
-    <div class="row">
-      <div class="col-lg-1 the_col"></div>
-        <div class="col-lg-10">
-        
-            <div class="container-fluid new_sec">
-                <div class="row">
-        
-                        {% for i in read_data %}
-                        <div class="col-lg-3">
-                            <div class="card"  style="width: 18rem;">
-                              <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap" >
-                              <div class="card-body">
-                                <h5 class="card-title">{{i.heading | title}}</h5>
-                                <p class="card-text">{{i.desc | title|safe|striptags|truncatechars:30}}</p>
-                                <a href="{% url 'readmore' i.id %}" class="btn btn-danger btn-01">show More</a>
-                              </div>
-                            </div>
-                            <br>
-                          </div>
-                          {% endfor %}
-                </div>
-                <div class="row">
-                    <a href="{% url 'create' %}"><button type="button" class="btn btn-secondary btn-lg btn-01">Create Blog</button></a>
-                    </div>
-            </div>
+<div class="container cont">
+  <div class="row">
+    {% for i in read_data %}
+    <div class="col-lg-4 col-md-6 col-sm-12"> 
+      <div class="card">
+        <img class="img-top" src="{{i.image.url}}" alt="Card image cap" height="200px">
+        <div class="card-body">
+          <h5 class="card-title">{{i.heading | title}}</h5>
+          <p class="card-text">{{i.desc | title|safe|striptags|truncatechars:30}}</p>
+          <a href="{% url 'readmore' i.id %}" class="btn btn-danger btn-01">show More</a>
         </div>
-        <div class="col-lg-1 the_col"></div>
+      </div>
     </div>
+    {% endfor %}
+  </div>
 </div>
-{% endblock %}  
-
+{% endblock %}

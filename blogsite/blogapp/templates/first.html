@@ -16,8 +16,29 @@
     <title>The Back</title>
     
     <style>
+        @media screen and (min-width: 320px) and (max-width: 520px){
+            .card{
+              margin: 0;
+              padding: 0;
+            }
+            .web img{
+                height: 100px;
+            }
+            .the_cont{
+                margin: 0;
+                padding: 0;
+            }
+            .new_col{
+                display: table;
+                margin: auto;
+            }
+            
+          }
+          @media screen and (min-width: 520px) and (max-width: 1000px){
+            
+            }
         .new_cont{
-            height: 800px;
+            
             background-image: linear-gradient(to bottom ,rgb(107, 107, 107) ,rgb(81, 79, 79));
             background-size: cover;
             background-repeat: no-repeat;
@@ -28,10 +49,10 @@
         
         .thd_row h1{
             margin-left: 80px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: 700;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: 400;
             margin-top: 50px;
-            color: black;
+            color: white;
         }
         .fr_row{
             margin-left: 80px;
@@ -60,8 +81,9 @@
             color: black;
         }
         .jaani{
-            width: 110%;
-            margin-left: -50px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
             
         }
         .btn-01{
@@ -97,7 +119,7 @@
         }
         .new_col{
             background-color: black;
-            height: 250px;
+            
         }
         .new_col ul li{
             display: block;
@@ -122,6 +144,7 @@
         .row_set p{
             color: white;
             font-weight: 700;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
         .row_set h1{
             color: white;
@@ -162,7 +185,7 @@
                             </p>
                     </div>
                     <div class="col-lg-3"></div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 web">
                         <img src="{% static 'web_developer.png' %}" height="400px" >
                     </div>
                 </div>
@@ -211,7 +234,7 @@
                             <br> no harm to any organization or individual.</h3>
                     </div>
                 </div>
-            </div>r
+            </div>
            
             
         </div>
