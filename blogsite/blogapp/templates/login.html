@@ -3,13 +3,22 @@
 {% load static %}
 
 <style>
-    .container{
-        height: 300px;
+    @media screen and (min-width: 320px) and (max-width: 520px){
+    
+        .main_light img{
+            height: 300px;
+            
+            filter: blur(5px);
+           
+        }.main_light{
+            height: 100px;
+            
+        }
+        .container{
+            height: 200px;
+        }
     }
-    .main_light{
-        height: 500px;
-        
-    }
+    
     .main_dark h2{
         font-weight: 700;
         box-shadow: 3px 4px 4px rgb(68, 66, 65);
@@ -20,11 +29,10 @@
         
         transform: scale(1.1);
     }
-    .main_dark{
-        height: 500px;
+    .main_dark{ 
         text-align: center;
         align-items: center;
-        padding-top: 50px;
+        
         background: transparent;
         color: rgb(52, 49, 48);
         
@@ -78,14 +86,14 @@
     {% csrf_token %}
     <div class="container">
         <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-10">
+            <div class="col-lg-1 col-md-6 col-sm-12"></div>
+            <div class="col-lg-10 col-md-6 col-sm-12">
                 <div class="row main_row">
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-5 main_light">
-                        <img src="{% static 'sign-up.webp' %}" height="500px" width="380px">
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-3 main_light">
+                        <img src="{% static 'sign-up.webp' %}" height="500px">
                     </div>
-                    <div class="col-lg-4 main_dark">
+                    <div class="col-lg-4 col-md-6 col-sm-6 main_dark">
 
                         <center><h2>Login Account</h2></center>
                         <small>Login to your Account</small>
@@ -116,7 +124,7 @@
                 </div>
 
             </div>
-            <div class="col-lg-1"></div>
+            <div class="col-lg-1 col-md-6 col-sm-12"></div>
         </div>
     </div>
 

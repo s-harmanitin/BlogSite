@@ -4,6 +4,18 @@
 
 
 <style>
+  @media screen and (min-width: 320px) and (max-width: 520px){
+    .new_img img{
+      margin-left: 10px;
+    }
+    .check-box{
+      width: 10%;
+    }
+    .new_box{
+      width: 50%;
+      margin-left: 40px;
+    }
+  }
 
 
 
@@ -82,15 +94,16 @@
     }
     .new_box{
         height: 10px;
-        width: 90%;
+        width: 80%;
         background-color: rgb(207, 204, 204);
-        margin-top: 5px;
+        margin-top: -17px;
+        margin-left: 40px;
     }
     .new_img img{
-        margin-left: -150px;
         border-radius: 5px;
 
     }
+    
     
     
 
@@ -112,9 +125,9 @@
     {% csrf_token %}
     <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-2"></div>
-          <div class="col-lg-4 new_img">
-            <img src="{% static 'signup.webp' %}" height="550px">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-5 new_img">
+            <img src="{% static 'signup.webp' %}"  class=" img-fluid" height="550px">
           </div>
           <div class="col-lg-4 main_row">
             <center><h1>Sign Up</h1></center>
@@ -169,10 +182,10 @@
             </div>
             <br>
             <div class="row">
-              <div class="col-lg-1">
+              <div class="col-lg-2 col-lg-6 col-sm-2">
                 <input type="checkbox" class="check-box" required>
               </div>
-              <div class="col-lg-11 new_box">
+              <div class="col-lg-10 col-md-6 col-sm-3 new_box">
               </div>
             </div>
             <br>
