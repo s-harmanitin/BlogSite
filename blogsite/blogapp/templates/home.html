@@ -67,7 +67,7 @@
         <img class="img-top" src="{{i.image.url}}" alt="Card image cap" height="200px">
         <div class="card-body">
           <h5 class="card-title">{{i.heading | title}}</h5>
-          <p class="card-text">{{i.desc | title|safe|striptags|truncatechars:30}}</p>
+          <p class="card-text">{{i.desc | title|safe|striptags|truncatechars:150}}</p>
           <a href="{% url 'readmore' i.id %}" class="btn btn-danger btn-01">show More</a>
         </div>
       </div>
